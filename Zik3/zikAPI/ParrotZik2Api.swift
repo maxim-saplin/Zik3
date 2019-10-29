@@ -19,6 +19,32 @@ class ParrotZik2Api {
     }
 
     init() {}
+    
+    // MARK: Audio properties - SHORTCUTS
+    
+    func turnAncAocOff() {
+        sendRequest(set(ParrotZikEndpoints.SetNoiseCancellationStatus, false))
+    }
+    
+    func turnAncOn() {
+        self.setAsyncNoiseControlLevelStatus(NoiseControlState.cancellingNormal   .urlParameter())
+        sendRequest(set(ParrotZikEndpoints.SetNoiseCancellationStatus, true))
+    }
+    
+    func turnAncL2On() {
+        self.setAsyncNoiseControlLevelStatus(NoiseControlState.cancellingMax   .urlParameter())
+        sendRequest(set(ParrotZikEndpoints.SetNoiseCancellationStatus, true))
+    }
+    
+    func turnAocOn() {
+        self.setAsyncNoiseControlLevelStatus(NoiseControlState.streetNormal   .urlParameter())
+        sendRequest(set(ParrotZikEndpoints.SetNoiseCancellationStatus, true))
+    }
+    
+    func turnAocL2On() {
+        self.setAsyncNoiseControlLevelStatus(NoiseControlState.streetMax   .urlParameter())
+        sendRequest(set(ParrotZikEndpoints.SetNoiseCancellationStatus, true))
+    }
 
     // MARK: Audio properties
     func getAsyncNoiseCancellationStatus() -> Bool {
@@ -32,6 +58,10 @@ class ParrotZik2Api {
     func getAsyncNoiseControlStatus() -> Bool {
         return sendRequest(get(ParrotZikEndpoints.NoiseControltatus))
     }
+    
+//    func toggleAsyncNoiseControlStatus(_ arg: Bool) -> Bool {
+//        return sendRequest(set(ParrotZikEndpoints.SetNoiseControlStatus, arg))
+//    }
 
     func getAsyncEqualizerStatus() -> Bool {
         return sendRequest(get(ParrotZikEndpoints.EqualizerStatus))

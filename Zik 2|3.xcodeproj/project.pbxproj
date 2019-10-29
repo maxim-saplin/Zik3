@@ -27,7 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		30B29E78209B75E0000786CD /* Zik3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zik3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30B29E78209B75E0000786CD /* Zik 2|3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zik 2|3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B29E7B209B75E0000786CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30B29E7D209B75E1000786CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30B29E82209B75E1000786CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		30B29E79209B75E0000786CD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				30B29E78209B75E0000786CD /* Zik3.app */,
+				30B29E78209B75E0000786CD /* Zik 2|3.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,9 +140,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		30B29E77209B75E0000786CD /* Zik3 */ = {
+		30B29E77209B75E0000786CD /* Zik 2|3 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 30B29E86209B75E1000786CD /* Build configuration list for PBXNativeTarget "Zik3" */;
+			buildConfigurationList = 30B29E86209B75E1000786CD /* Build configuration list for PBXNativeTarget "Zik 2|3" */;
 			buildPhases = (
 				30B29E74209B75E0000786CD /* Sources */,
 				30B29E75209B75E0000786CD /* Frameworks */,
@@ -152,9 +152,9 @@
 			);
 			dependencies = (
 			);
-			name = Zik3;
+			name = "Zik 2|3";
 			productName = Zik3;
-			productReference = 30B29E78209B75E0000786CD /* Zik3.app */;
+			productReference = 30B29E78209B75E0000786CD /* Zik 2|3.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -177,7 +177,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 30B29E73209B75E0000786CD /* Build configuration list for PBXProject "Zik3" */;
+			buildConfigurationList = 30B29E73209B75E0000786CD /* Build configuration list for PBXProject "Zik 2|3" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -190,7 +190,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				30B29E77209B75E0000786CD /* Zik3 */,
+				30B29E77209B75E0000786CD /* Zik 2|3 */,
 			);
 		};
 /* End PBXProject section */
@@ -353,13 +353,15 @@
 				CODE_SIGN_ENTITLEMENTS = Zik3/Zik3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				INFOPLIST_FILE = Zik3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nst.Zik3;
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "nst.Zik2-3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -372,13 +374,15 @@
 				CODE_SIGN_ENTITLEMENTS = Zik3/Zik3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				INFOPLIST_FILE = Zik3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nst.Zik3;
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "nst.Zik2-3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -387,7 +391,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		30B29E73209B75E0000786CD /* Build configuration list for PBXProject "Zik3" */ = {
+		30B29E73209B75E0000786CD /* Build configuration list for PBXProject "Zik 2|3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				30B29E84209B75E1000786CD /* Debug */,
@@ -396,7 +400,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		30B29E86209B75E1000786CD /* Build configuration list for PBXNativeTarget "Zik3" */ = {
+		30B29E86209B75E1000786CD /* Build configuration list for PBXNativeTarget "Zik 2|3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				30B29E87209B75E1000786CD /* Debug */,

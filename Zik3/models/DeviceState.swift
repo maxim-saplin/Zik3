@@ -6,6 +6,8 @@ class DeviceState {
     fileprivate var stateBatteryLevel: String = Empty
     fileprivate var stateBatteryStatus: String = Empty
     fileprivate var stateNoiseCancellationEnabled: Bool = false
+    
+    
     fileprivate var stateDeviceName: String = Empty
     fileprivate var stateNoiseControlEnabled: Bool = false
     fileprivate var stateEqualizerEnabled: Bool = false
@@ -13,6 +15,11 @@ class DeviceState {
     fileprivate var stateHeadModeDetection: Bool = false
     fileprivate var stateFlightModeEnabled: Bool = false
     fileprivate var noiseControlState: NoiseControlState = NoiseControlState.cancellingNormal
+    
+    fileprivate var stateAncEnabled: Bool = false
+    fileprivate var stateAncL2Enabled: Bool = false
+    fileprivate var stateAocEnabled: Bool = false
+    fileprivate var stateAocL2Enabled: Bool = false
 
 
     var name: String {
@@ -57,6 +64,42 @@ class DeviceState {
         }
         set {
             stateNoiseCancellationEnabled = newValue
+        }
+    }
+    
+    var ancEnabled: Bool {
+        get {
+            return stateAncEnabled
+        }
+        set {
+            stateAncEnabled = newValue
+        }
+    }
+    
+    var ancL2Enabled: Bool {
+        get {
+            return stateAncL2Enabled
+        }
+        set {
+            stateAncL2Enabled = newValue
+        }
+    }
+    
+    var aocEnabled: Bool {
+        get {
+            return stateAocEnabled
+        }
+        set {
+            stateAocEnabled = newValue
+        }
+    }
+    
+    var aocL2Enabled: Bool {
+        get {
+            return stateAocL2Enabled
+        }
+        set {
+            stateAocL2Enabled = newValue
         }
     }
 

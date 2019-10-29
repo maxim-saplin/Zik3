@@ -3,6 +3,13 @@ import IOBluetooth
 protocol BTCommunicationServiceInterface {
     func getAsyncBatteryInfo() -> Bool
     func toggleAsyncNoiseCancellation(_ arg: Bool) -> Bool
+    
+    func turnAncAocOff()
+    func turnAncOn()
+    func turnAncL2On()
+    func turnAocOn()
+    func turnAocL2On()
+    
     func toggleAsyncEqualizerStatus(_ arg: Bool) -> Bool
     func toggleAsyncConcertHall(_ arg: Bool) -> Bool
     func toggleAsyncHeadDetection(_ arg: Bool) -> Bool
@@ -11,6 +18,36 @@ protocol BTCommunicationServiceInterface {
 }
 
 class BTCommunicationService: BTCommunicationServiceInterface, IOBluetoothRFCOMMChannelDelegate {
+    
+    private func updateAncAocStatus(){
+        api.getAsyncNoiseCancellationStatus()
+        api.getAsyncNoiseControlLevelStatus()
+    }
+
+    func turnAncAocOff() {
+        api.turnAncAocOff()
+        updateAncAocStatus()
+    }
+    
+    func turnAncOn() {
+        api.turnAncOn()
+        updateAncAocStatus()
+    }
+    
+    func turnAncL2On() {
+        api.turnAncL2On()
+        updateAncAocStatus()
+    }
+    
+    func turnAocOn() {
+        api.turnAocOn()
+        updateAncAocStatus()
+    }
+    
+    func turnAocL2On() {
+        api.turnAocL2On()
+        updateAncAocStatus()
+    }
 
     fileprivate let rfcommChannel: IOBluetoothRFCOMMChannel? = nil
     fileprivate let api: ParrotZik2Api!

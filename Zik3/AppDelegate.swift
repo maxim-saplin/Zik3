@@ -18,9 +18,43 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     var notificationGiven: Bool = false;
     
+//    @objc
+//    func toggleNoiseCancellation(sender: AnyObject) {
+//        service?.setNoiseControlLevel(NoiseControlState(level: 1, mode: "anc"))
+//
+//        let _ = service?.toggleAsyncNoiseCancellation(!self.deviceState.noiseCancellationEnabled)
+//    }
+    
     @objc
-    func toggleNoiseCancellation(sender: AnyObject) {
-        let _ = service?.toggleAsyncNoiseCancellation(!self.deviceState.noiseCancellationEnabled)
+    func turnAncAocOff(sender: AnyObject) {
+        service?.turnAncAocOff();
+        
+        let _ = false;
+    }
+    
+    @objc
+    func turnAncOn(sender: AnyObject) {
+        service?.turnAncOn();
+    }
+    
+    @objc
+    func turnAncL2On(sender: AnyObject) {
+        service?.turnAncL2On();
+    }
+    
+    @objc
+    func turnAocOn(sender: AnyObject) {
+        service?.turnAocOn();
+    }
+    
+    @objc
+    func turnAocL2On(sender: AnyObject) {
+        service?.turnAocL2On();
+    }
+    
+    @objc
+    func toggleConcertHall(sender: AnyObject) {
+        let _ = service?.toggleAsyncConcertHall(!self.deviceState.concertHallEnabled)
     }
     
     @objc
@@ -67,14 +101,39 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menuItem = menu.addItem(withTitle: title, action: nil, keyEquivalent: "")
         menuItem.indentationLevel = 1
         
-        menuItem = menu.addItem(withTitle: "Noise cancellation", action: #selector(self.toggleNoiseCancellation), keyEquivalent: "")
+        menuItem = menu.addItem(withTitle: "OFF: Noise cancelling & Street Mode", action: #selector(self.turnAncAocOff), keyEquivalent: "")
         menuItem.indentationLevel = 1
-        menuItem.state = self.deviceState.noiseCancellationEnabled ?
+        menuItem.state = !self.deviceState.noiseCancellationEnabled ?
+            NSControl.StateValue.on : NSControl.StateValue.off
+        
+        menuItem = menu.addItem(withTitle: "Noise cancelling | Medium", action: #selector(self.turnAncOn), keyEquivalent: "")
+        menuItem.indentationLevel = 2
+        menuItem.state = self.deviceState.ancEnabled ?
+            NSControl.StateValue.on : NSControl.StateValue.off
+        
+        menuItem = menu.addItem(withTitle: "Noise cancelling | Strong", action: #selector(self.turnAncL2On), keyEquivalent: "")
+        menuItem.indentationLevel = 2
+        menuItem.state = self.deviceState.ancL2Enabled ?
+            NSControl.StateValue.on : NSControl.StateValue.off
+        
+        menuItem = menu.addItem(withTitle: "Street mode | Medium", action: #selector(self.turnAocOn), keyEquivalent: "")
+        menuItem.indentationLevel = 2
+        menuItem.state = self.deviceState.aocEnabled ?
+            NSControl.StateValue.on : NSControl.StateValue.off
+        
+        menuItem = menu.addItem(withTitle: "Street mode | Strong", action: #selector(self.turnAocL2On), keyEquivalent: "")
+        menuItem.indentationLevel = 2
+        menuItem.state = self.deviceState.aocL2Enabled ?
             NSControl.StateValue.on : NSControl.StateValue.off
         
         menuItem = menu.addItem(withTitle: "Equalizer", action: #selector(self.toggleEqualizer), keyEquivalent: "")
         menuItem.indentationLevel = 1
         menuItem.state = self.deviceState.equalizerEnabled ?
+            NSControl.StateValue.on : NSControl.StateValue.off
+        
+        menuItem = menu.addItem(withTitle: "Concert hall", action: #selector(self.toggleConcertHall(sender:)), keyEquivalent: "")
+        menuItem.indentationLevel = 1
+        menuItem.state = self.deviceState.concertHallEnabled ?
             NSControl.StateValue.on : NSControl.StateValue.off
         
         menuItem = menu.addItem(withTitle: "Quit", action: #selector(self.quit), keyEquivalent: "")

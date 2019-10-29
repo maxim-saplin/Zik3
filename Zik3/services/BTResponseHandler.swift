@@ -84,7 +84,30 @@ class ZikResponseHandler: BTResponseHandlerInterface {
         let mode = document
             .root["audio"]["noise_control"].attributes["type"]!
         deviceState.noiseControlLevelState = NoiseControlState(level: Int(level)!, mode: mode)
-
+        
+        deviceState.ancEnabled = false
+        deviceState.ancL2Enabled = false
+        deviceState.aocEnabled = false
+        deviceState.aocL2Enabled = false
+        
+        if mode != "off" {
+            if (mode == "anc"){
+                if (deviceState.noiseControlLevelState.level == 1) {
+                    deviceState.ancEnabled = true
+                }
+                else {
+                    deviceState.ancL2Enabled = true
+                }
+            }
+            else if (mode == "aoc"){
+                if (deviceState.noiseControlLevelState.level == 1) {
+                    deviceState.aocEnabled = true
+                }
+                else {
+                    deviceState.aocL2Enabled = true
+                }
+            }
+        }
     }
 
     fileprivate func exitParrot(_ document: AEXMLDocument) {
