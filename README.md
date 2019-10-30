@@ -1,4 +1,4 @@
-## macOS App for Parrot Zik 2 and Zik 3 Headphones
+# macOS App for Parrot Zik 2 and Zik 3 Headphones
 ![UI](https://github.com/maxim-saplin/Zik3/raw/master/Screenshot%202019-10-17%2015.16.01.png)
 
 # Download: 
